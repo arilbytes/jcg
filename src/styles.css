@@ -166,3 +166,9 @@ em{font-style:normal;color:var(--chart)}
   .cta .btn{width:100%;justify-content:center}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+@media (max-width:560px){
+  .flag,
+  .postcard span{display:none}
+  .country{justify-content:flex-end}
+}

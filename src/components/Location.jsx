@@ -6,7 +6,7 @@ export default function Location() {
     <section className="location" id="visit">
       <div className="container location-grid">
         <div className="location-copy">
-          <h2>Visit our <em>head office</em></h2>
+          <h2>Visit our <em>Head Office</em></h2>
           <p>{office.address}</p>
           <div className="location-actions">
             <a href={office.directionsUrl} target="_blank" rel="noreferrer" className="btn btn-cta">
