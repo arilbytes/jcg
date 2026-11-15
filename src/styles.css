@@ -135,7 +135,6 @@ em{font-style:normal;color:var(--chart)}
 
 @media (max-width:980px){.location-grid{grid-template-columns:1fr}}
 @media (max-width:560px){.review{width:280px}.location-actions .btn{width:100%;justify-content:center}}
-{animation-duration:140s}
 
 /* responsive */
 @media (max-width:980px){
