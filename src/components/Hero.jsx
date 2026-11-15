@@ -31,7 +31,7 @@ export default function Hero() {
             <path d="M5 130C80 120 140 20 280 18" stroke="#DBFF00" strokeWidth="2" strokeDasharray="6 8" />
           </svg>
           <span className="plane"><Icon name="plane" size={40} /></span>
-          <p className="note">Launch your global career today</p>
+          {/* <p className="note">Launch your global career today</p> */}
         </div>
       </div>
     </section>
