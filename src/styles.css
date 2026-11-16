@@ -133,6 +133,53 @@ em{font-style:normal;color:var(--chart)}
 .map-frame{border-radius:var(--r);overflow:hidden;border:6px solid var(--ice);box-shadow:0 20px 40px rgba(0,0,0,.35);aspect-ratio:16/10;background:var(--electric)}
 .map-frame iframe{width:100%;height:100%;border:0;display:block}
 
+/* ===== consultation modal ===== */
+button.btn{font-family:inherit;line-height:inherit}
+.modal-overlay{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:20px;background:rgba(8,22,33,.72);backdrop-filter:blur(6px);overflow-y:auto;animation:fadeIn .2s ease}
+.modal{position:relative;width:min(520px,100%);max-height:calc(100vh - 40px);overflow-y:auto;background:var(--white);color:var(--navy);border-radius:28px;padding:36px 32px 32px;box-shadow:0 30px 70px rgba(0,0,0,.45);animation:popIn .25s ease}
+.modal h2{font-size:clamp(1.7rem,4vw,2.2rem);margin-bottom:8px}
+.modal em{color:var(--electric)}
+.modal-pill{background:rgba(33,75,147,.12);border-color:rgba(33,75,147,.25);color:var(--electric);margin-bottom:16px}
+.modal-sub{opacity:.8;margin-bottom:24px;font-size:.95rem}
+.modal-close{position:absolute;top:14px;right:16px;width:40px;height:40px;border-radius:50%;border:0;background:var(--ice);color:var(--navy);font-size:1.6rem;line-height:1;cursor:pointer;transition:background .2s}
+.modal-close:hover{background:var(--chart)}
+.modal form{display:flex;flex-direction:column;gap:16px}
+.field{display:flex;flex-direction:column;gap:6px;flex:1;min-width:0}
+.field label{font-size:.82rem;font-weight:700}
+.field input,.field select{width:100%;font:inherit;font-size:.95rem;color:var(--navy);background:var(--ice);border:2px solid transparent;border-radius:14px;padding:13px 16px;transition:border-color .2s,background .2s}
+.field input::placeholder{color:rgba(16,44,64,.45)}
+.field input:focus,.field select:focus{outline:none;border-color:var(--electric);background:#fff}
+.field.has-error input,.field.has-error select,.field.has-error .phone-wrap{border-color:#d33}
+.err{font-size:.78rem;color:#c62828;font-weight:600}
+.field-row{display:flex;gap:14px}
+.phone-wrap{display:flex;align-items:stretch;background:var(--ice);border:2px solid transparent;border-radius:14px;transition:border-color .2s,background .2s}
+.phone-wrap:focus-within{border-color:var(--electric);background:#fff}
+.phone-wrap .prefix{display:flex;align-items:center;padding:0 12px 0 16px;font-weight:700;font-size:.92rem;border-right:1px solid rgba(16,44,64,.15);white-space:nowrap}
+.phone-wrap input{border:0;background:transparent;border-radius:0 14px 14px 0}
+.phone-wrap input:focus{background:transparent}
+.submit{justify-content:center;margin-top:6px;background:var(--navy);color:var(--chart)}
+.submit:disabled{opacity:.6;cursor:wait;transform:none}
+.form-error{color:#c62828;font-size:.85rem;font-weight:600}
+.modal-done{text-align:center;padding:20px 0 8px;display:flex;flex-direction:column;align-items:center;gap:14px}
+.done-tick{display:grid;place-items:center;width:64px;height:64px;border-radius:50%;background:var(--electric);color:var(--white)}
+.modal-done .btn{background:var(--navy);color:var(--chart);margin-top:8px}
+
+/* ===== whatsapp floating button ===== */
+.wa-float{position:fixed;right:22px;bottom:22px;z-index:90;display:grid;place-items:center;width:60px;height:60px;border-radius:50%;background:#25D366;color:#fff;box-shadow:0 10px 25px rgba(0,0,0,.35);transition:transform .2s}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float::before{content:'';position:absolute;inset:0;border-radius:50%;background:#25D366;opacity:.5;z-index:-1;animation:waPulse 2s ease-out infinite}
+
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes popIn{from{opacity:0;transform:translateY(16px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes waPulse{from{transform:scale(1);opacity:.5}to{transform:scale(1.6);opacity:0}}
+
+@media (max-width:560px){
+  .modal{padding:30px 20px 24px;border-radius:22px}
+  .field-row{flex-direction:column}
+  .wa-float{right:16px;bottom:16px;width:54px;height:54px}
+}
+@media (prefers-reduced-motion:reduce){.wa-float::before{animation:none}}
+
 @media (max-width:980px){.location-grid{grid-template-columns:1fr}}
 @media (max-width:560px){.review{width:280px}.location-actions .btn{width:100%;justify-content:center}}
 
@@ -172,3 +219,4 @@ em{font-style:normal;color:var(--chart)}
   .postcard span{display:none}
   .country{justify-content:flex-end}
 }
+

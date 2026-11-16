@@ -1,6 +1,8 @@
 import Icon from './Icon'
+import { useConsult } from '../ConsultContext'
 
 export default function CtaBand() {
+  const { openConsult } = useConsult()
   return (
     <section className="cta" id="contact">
       <div className="container cta-row">
@@ -8,7 +10,9 @@ export default function CtaBand() {
           <h2>Take the first step towards a <em>global</em> future</h2>
           <p>Launch your global career today. Let's turn your study abroad dream into reality.</p>
         </div>
-        <a href="mailto:info@journeyconsultinggroup.in" className="btn btn-cta">Get started today <Icon name="arrow" size={18} /></a>
+        <button type="button" className="btn btn-cta" onClick={openConsult}>
+          Get started today <Icon name="arrow" size={18} />
+        </button>
       </div>
     </section>
   )

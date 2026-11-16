@@ -8,10 +8,12 @@ import Location from './components/Location'
 import CtaBand from './components/CtaBand'
 import Stats from './components/Stats'
 import Footer from './components/Footer'
+import { ConsultProvider } from './ConsultContext'
+import WhatsAppButton from './components/WhatsAppButton'
 
 export default function App() {
   return (
-    <>
+    <ConsultProvider>
       <Navbar />
       <main>
         <Hero />
@@ -26,6 +28,7 @@ export default function App() {
         <Stats />
       </main>
       <Footer />
-    </>
+      <WhatsAppButton />
+    </ConsultProvider>
   )
 }

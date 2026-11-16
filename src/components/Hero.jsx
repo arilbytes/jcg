@@ -1,6 +1,9 @@
 import Icon from './Icon'
+import { useConsult } from '../ConsultContext'
 
 export default function Hero() {
+  const { openConsult } = useConsult()
+
   return (
     <section className="hero" id="top">
       <div className="hero-bg" aria-hidden="true"></div>
@@ -10,7 +13,9 @@ export default function Hero() {
           <h1>Your <em>Global</em> Education Partner</h1>
           <p className="lead">Turn your dream of studying abroad into your reality. India's fastest growing B2B Ed-tech company and the only one with comprehensive IMAT preparation.</p>
           <div className="hero-actions">
-            <a href="#contact" className="btn btn-cta">Book a free consultation <Icon name="arrow" size={18} /></a>
+            <button type="button" className="btn btn-cta" onClick={openConsult}>
+              Book a free consultation <Icon name="arrow" size={18} />
+            </button>
             <a href="#imat" className="btn btn-ghost">Explore IMAT classes</a>
           </div>
         </div>
@@ -31,7 +36,6 @@ export default function Hero() {
             <path d="M5 130C80 120 140 20 280 18" stroke="#DBFF00" strokeWidth="2" strokeDasharray="6 8" />
           </svg>
           <span className="plane"><Icon name="plane" size={40} /></span>
-          {/* <p className="note">Launch your global career today</p> */}
         </div>
       </div>
     </section>
